@@ -1,27 +1,19 @@
 <template>
   <div class="header">
     <div class="logo-wrapper">
-      <img class="logo" cheight="30.7px" width="124.7px" src="./Page1.png"/>
-      <span class="logo-name">场景库</span>
+      <img class="logo" height="28px" width="120px" src="./Page1.png"/>
     </div>
-    <div class="location">
-      <i class="el-icon-location-outline" style="width: 16px; height: 18px;"></i>
-      <input type="text" @click="locationListShow = true" :value="locationName" size="4" maxlength="4">
-      <div class="location-list" v-show="locationListShow">
-        <div style="height: 45px; line-height: 45px">
-          <span style="margin-left: 16px; font-family: PingFangSC-Light; font-size: 16px;letter-spacing: 0;">城市名称</span>
-        </div>
-        <ul>
-          <li class="location-name" :class="{ current: item == locationName }" @click="changeLocation(item)" v-for="item in locationList">{{ item }}</li>
-        </ul>
-      </div>
-    </div>
-    <div class="search">
-      <el-input
-        placeholder="标签，场景名称"
-        prefix-icon="el-icon-search"
-        v-model="input" class="input11">
-      </el-input>
+    <div class="logo-name">场景库</div>
+    <div class="city-select">
+      <i class="iconfont icon-location"></i>
+      <el-select class="city-selected" @change="changeCity" v-model="currentCity" placeholder="请选择">
+        <el-option
+          v-for="city in cities"
+          :key="city.id"
+          :label="city.name"
+          :value="city.name">
+        </el-option>
+      </el-select>
     </div>
     <div class="personal-center">
       登录
@@ -38,80 +30,70 @@
         locationList: [
           '北京', '上海', '重庆', '运城'
         ],
-        locationName: '重庆'
+        cities: [],
+        currentCity: ''
       };
     },
     methods: {
-      changeLocation: function (name) {
-        this.locationName = name;
-        this.locationListShow = false;
+      changeCity: function () {
+        this.$emit('changeCity', this.currentCity);
       }
+    },
+    mounted () {
+      this.$ajax.get('/api/city').then((response) => {
+        response = response.data;
+        this.cities = response.cityList;
+        for (var i = 0; i < this.cities.length; i++) {
+//          console.log(this.cities[i]);
+          if (this.cities[i].default === '1') {
+            this.currentCity = this.cities[i].name;
+          }
+        }
+      }).catch(function (err) {
+        console.log(err);
+      });
     }
   };
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
   .header
+    display: flex
+    align-items: center
     height: 64px
-    width: 1440px
+    width: 100%
     background: #FFFFFF
     box-shadow: 0 2px 5px 0
+    padding-left: 26px
     font-size: 0px
-    .logo-wrapper
-      display: inline-block
-      padding: 17.1px 0px 0px 26px
-      line-height: 30.7px
-      .logo
-        padding-right: 10px
-        vertical-align: top
-      .logo-name
-        padding-left: 10px
-        border-left: 1px solid #989898
-        font-size: 26.4px
-        color: #595757
-    .location
-      display: inline-block
-      position: relative
-      padding-left: 137.3px
+    letter-spacing: 0
+    .logo
+      margin-right: 10px
+      padding-right: 10px
+      border-right: 1px solid #ddd
+    .logo-name
+      width: 80px
+      font-size: 26px
+      color: #595757
+    .city-select
+      margin-left: 120px
       font-size: 18px
       font-family: PingFangSC-Medium
-      color: #333333
-      line-height: 25px
-      .location-list
-        position: absolute;
-        top: 53px
-        width: 249px
-        height: 185px
-        background: #ffffff
-        border: 1px solid #CCCCCC
-        box-shadow: 0 1px 4px 0 #CCCCCC
-        z-index: 2
-        .location-name
-          display: block
-          padding-left: 16px
-          line-height: 44px
-          font-family: PingFangSC-Light
-          font-size: 16px
-          color: #3F3F3F
-          letter-spacing: 0
-        .current
-          background: #ADD5BA
-      .el-icon-location-outline
-        padding-right: 8px
+      color: #333
+      .icon-location
+        font-size: 22px
+      .city-selected
+        width: 100px
+        margin-right: 30px
+        .el-input__inner
+          border: none
+          font-size: 18px
+          color: #333
     .search
-      display: inline-block
-      vertical-align: top
-      margin: 14px 0 14px 54px
-      .input11
-        height: 36px
-        width: 440px
+      flex-shrink: 1
     .personal-center
-      font-family: PingFangSC-Regular;
-      float: right
-      margin-top: 19px
-      margin-right: 32px
+      font-family: PingFangSC-Regular
       font-size: 16px
-      line-height: 22px
-      color: #333333;
-      letter-spacing: 0
+      text-align: right
+      color: #333333
 </style>

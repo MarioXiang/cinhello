@@ -6,8 +6,7 @@
       <div class="tag">可租赁</div>
     </div>
     <span class="name">古街梯</span>
-    <img class="favor" src="./faver.png" width="18px" height="18px">
-    <img class="place-img" src="http://placehold.it/290x163">
+    <i  class="iconfont icon-favor"></i>
     <div class="number">
       <span>11 收藏</span>
       <span>3 拍过</span>
@@ -21,10 +20,10 @@
 
 <style lang="stylus" rel="stylesheet/stylus">
   .place {
-    float: left;
-    display: inline-block;
     position: relative;
-    margin: 8px 10px
+    background: url("http://placehold.it/290x163") no-repeat 0 0
+    width: 290px
+    height: 163px
   }
   .name {
     position: absolute;
@@ -43,14 +42,12 @@
     left: 12.8px;
     font-size: 0;
   }
-  .place-img {
-    float: left;
-    z-index: -1;
-  }
-  .favor{
+  .icon-favor{
     position: absolute;
+    font-size: 18px
     top: 16px;
     right: 11px;
+    color: #d81e06
   }
   .tag {
     display: inline-block;

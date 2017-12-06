@@ -100,102 +100,137 @@
 
 <style lang="stylus" rel="stylesheet/stylus">
   .searchlables
-    width: 1440px
+    width: 100%
     height: 127px
     background: rgba(173,213,186,0.10)
-    padding-top: 19px
+    display: flex
+    justify-content: space-around
+    flex-wrap: wrap
+    align-content: center
     .searchlable1
-      display: inline-block
+      display: flex
       width: 551px
       height: 40px
-      line-height: 40px
       background: #FFFFFF
-      margin: 17px 14px 11px 26px
+      line-height: 40px
+      margin-bottom: 11px
       .typename
         display: inline-block
         padding-left: 13px
         font-family: PingFangSC-Light
         font-size: 14px
-        line-height: 14px
         color: #333333
         letter-spacing: 0
       .detail
         display: inline-block
         padding-left: 49px
     .searchlable2
-      display: inline-block
+      display: flex
       width: 828px
       height: 40px
-      line-height: 40px
       background: #FFFFFF
-      margin: 5.5px 0px
-      .typename
-        display: inline-block
-        padding-left: 13px
-        font-family: PingFangSC-Light
-        font-size: 14px
-        line-height: 14px
-        color: #333333
-        letter-spacing: 0
-      .detail
-        display: inline-block
-        padding-left: 49px
-        .lable
-          width: 16px
-          height: 16px
-          padding-top: 3px
     .searchlable3
-      display: inline-block
+      display: flex
       width: 551px
       height: 40px
-      line-height: 40px
       background: #FFFFFF
-      margin:0px 14px 0px 25px
-      .typename
-        display: inline-block
-        padding-left: 13px
-        font-family: PingFangSC-Light
-        font-size: 14px
-        line-height: 14px
-        color: #333333
-        letter-spacing: 0
-      .detail
-        display: inline-block
-        padding-left: 49px
-        .check
-          display: inline
-          width: 373px
-          color: #999999
-        .more
-          padding-left: 65px
-          font-family: PingFangSC-Light
-          font-size: 14px
-          color: #999999
-          letter-spacing: 0
     .searchlable4
-      display: inline-block
+      display: flex
       width: 828px
       height: 40px
-      line-height: 40px
       background: #FFFFFF
-      .typename
-        display: inline-block
-        padding-left: 13px
-        font-family: PingFangSC-Light
-        font-size: 14px
-        line-height: 14px
-        color: #333333
-        letter-spacing: 0
-      .detail
-        display: inline-block
-        padding-left: 49px
-        .check
-          display: inline
-          width: 373px
-        .more
-          padding-left: 70px
-          font-family: PingFangSC-Light
-          font-size: 14px
-          color: #999999
-          letter-spacing: 0
 </style>
+<!--.searchlable1-->
+<!--display: inline-block-->
+<!--width: 551px-->
+<!--height: 40px-->
+<!--line-height: 40px-->
+<!--background: #FFFFFF-->
+<!--margin: 17px 14px 11px 26px-->
+<!--.typename-->
+<!--display: inline-block-->
+<!--padding-left: 13px-->
+<!--font-family: PingFangSC-Light-->
+<!--font-size: 14px-->
+<!--line-height: 14px-->
+<!--color: #333333-->
+<!--letter-spacing: 0-->
+<!--.detail-->
+<!--display: inline-block-->
+<!--padding-left: 49px-->
+<!--.searchlable2-->
+<!--display: inline-block-->
+<!--width: 828px-->
+<!--height: 40px-->
+<!--line-height: 40px-->
+<!--background: #FFFFFF-->
+<!--margin: 5.5px 0px-->
+<!--.typename-->
+<!--display: inline-block-->
+<!--padding-left: 13px-->
+<!--font-family: PingFangSC-Light-->
+<!--font-size: 14px-->
+<!--line-height: 14px-->
+<!--color: #333333-->
+<!--letter-spacing: 0-->
+<!--.detail-->
+<!--display: inline-block-->
+<!--padding-left: 49px-->
+<!--.lable-->
+<!--width: 16px-->
+<!--height: 16px-->
+<!--padding-top: 3px-->
+<!--.searchlable3-->
+<!--display: inline-block-->
+<!--width: 551px-->
+<!--height: 40px-->
+<!--line-height: 40px-->
+<!--background: #FFFFFF-->
+<!--margin:0px 14px 0px 25px-->
+<!--.typename-->
+<!--display: inline-block-->
+<!--padding-left: 13px-->
+<!--font-family: PingFangSC-Light-->
+<!--font-size: 14px-->
+<!--line-height: 14px-->
+<!--color: #333333-->
+<!--letter-spacing: 0-->
+<!--.detail-->
+<!--display: inline-block-->
+<!--padding-left: 49px-->
+<!--.check-->
+<!--display: inline-->
+<!--width: 373px-->
+<!--color: #999999-->
+<!--.more-->
+<!--padding-left: 65px-->
+<!--font-family: PingFangSC-Light-->
+<!--font-size: 14px-->
+<!--color: #999999-->
+<!--letter-spacing: 0-->
+<!--.searchlable4-->
+<!--display: inline-block-->
+<!--width: 828px-->
+<!--height: 40px-->
+<!--line-height: 40px-->
+<!--background: #FFFFFF-->
+<!--.typename-->
+<!--display: inline-block-->
+<!--padding-left: 13px-->
+<!--font-family: PingFangSC-Light-->
+<!--font-size: 14px-->
+<!--line-height: 14px-->
+<!--color: #333333-->
+<!--letter-spacing: 0-->
+<!--.detail-->
+<!--display: inline-block-->
+<!--padding-left: 49px-->
+<!--.check-->
+<!--display: inline-->
+<!--width: 373px-->
+<!--.more-->
+<!--padding-left: 70px-->
+<!--font-family: PingFangSC-Light-->
+<!--font-size: 14px-->
+<!--color: #999999-->
+<!--letter-spacing: 0-->
